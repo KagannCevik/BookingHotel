@@ -1,0 +1,277 @@
+﻿@model List<BookingHotel.Models.HotelModel>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hotel Results - Room List</title>
+    <link rel="icon" type="image/png" href="/hostily/assets/img/favicon.png">
+    <link rel="stylesheet" href="/hostily/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/hostily/assets/css/all.css">
+    <link rel="stylesheet" href="/hostily/assets/css/animate.css">
+    <link rel="stylesheet" href="/hostily/assets/css/nice-select.css">
+    <link rel="stylesheet" href="/hostily/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/hostily/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/hostily/assets/css/meanmenu.min.css">
+    <link rel="stylesheet" href="/hostily/assets/sass/style.css">
+    <style>
+        .room__list-item { background: #fff; border-radius: 18px; box-shadow: 0 2px 16px rgba(78,84,200,0.09); margin-bottom: 32px; display: flex; align-items: stretch; }
+        .room__list-item-left { flex: 0 0 200px; display: flex; align-items: center; justify-content: center; }
+        .room__list-item-image img { border-radius: 14px; width: 180px; height: 140px; object-fit: cover; }
+        .room__list-item-right { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 24px 18px; }
+        .room__list-item-right-content h4 { color: #4e54c8; font-weight: 700; }
+        .room__list-item-right-meta-top { display: flex; align-items: center; gap: 18px; font-size: 1.1em; }
+        .room__list-item-right-meta-top span { color: #4e54c8; font-weight: 600; font-size: 1.1em; }
+        .room__list-item-right-meta-top p { margin: 0; color: #fbbf24; font-weight: 600; }
+        .simple-btn { color: #4e54c8; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+        .simple-btn:hover { color: #222; }
+    </style>
+</head>
+<body>
+    <!-- Header Area Start -->
+    <div class="header__sticky one">
+        <div class="header__area page">
+            <div class="container custom__container">
+                <div class="header__area-menubar">
+                    <div class="header__area-menubar-left">
+                        <div class="header__area-menubar-left-logo">
+                            <a href="/"><img src="/hostily/assets/img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="header__area-menubar-right">
+                        <div class="header__area-menubar-right-menu menu-responsive">
+                            <ul id="mobilemenu">
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/">Rooms</a></li>
+                                <li><a href="/">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header__area-menubar-right-box">
+                        <div class="header__area-menubar-right-box-btn">
+                            <a class="theme-btn" href="/">Book Now<i class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header Area End -->
+    <!-- Page Banner Start -->
+    <div class="page__banner" data-background="/hostily/assets/img/banner/page-banner-5.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__banner-title">
+                        <h1>Hotel Results</h1>
+                        <div class="page__banner-title-menu">
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li><span>-</span>Hotel Results</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Banner End -->
+    <!-- Room List Start -->
+    <div class="room__list section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="all__sidebar">
+                        <div class="all__sidebar-item">
+                            <h5>Category</h5>
+                            <div class="all__sidebar-item-category">
+                                <ul>
+                                    <li><a href="#"><i class="far fa-angle-double-right"></i>Luxury Room</a></li>
+                                    <li><a href="#"><i class="far fa-angle-double-right"></i>Small Suite</a></li>
+                                    <li><a href="#"><i class="far fa-angle-double-right"></i>Single</a></li>
+                                    <li><a href="#"><i class="far fa-angle-double-right"></i>Family</a></li>
+                                    <li><a href="#"><i class="far fa-angle-double-right"></i>Double Room</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="all__sidebar-item">
+                            <h5>Booking Now</h5>
+                            <div class="all__sidebar-item-booking">
+                                <div class="all__sidebar-item-booking-item mb-10">
+                                    <input type="date" class="form-control" placeholder="Check In" />
+                                </div>
+                                <div class="all__sidebar-item-booking-item mb-10">
+                                    <input type="date" class="form-control" placeholder="Check Out" />
+                                </div>
+                                <div class="all__sidebar-item-booking-item mb-30">
+                                    <select class="form-control">
+                                        <option>Room</option>
+                                        <option>1 Room</option>
+                                        <option>2 Room</option>
+                                        <option>3 Room</option>
+                                        <option>4 Room</option>
+                                    </select>
+                                </div>
+                                <a class="theme-btn" href="#">Check<i class="fal fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 order-first order-xl-1 xl-mb-30">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        foreach (var hotel in Model)
+                        {
+                            <div class="room__list-item">
+                                <div class="room__list-item-left">
+                                    <div class="room__list-item-image">
+                                        <img src="@hotel.ImageUrl" alt="@hotel.Name" />
+                                    </div>
+                                </div>
+                                <div class="room__list-item-right">
+                                    <div class="room__list-item-right-content">
+                                        <h4>@hotel.Name</h4>
+                                        <p>@hotel.Address</p>
+                                        <ul>
+                                            <li><i class="fal fa-bed-alt"></i> @hotel.City</li>
+                                            <li><i class="fal fa-users"></i> @hotel.Country</li>
+                                        </ul>
+                                    </div>
+                                    <div class="room__list-item-right-meta">
+                                        <div class="room__list-item-right-meta-top">
+                                            <span>@hotel.Price @hotel.Currency/Night</span>
+                                            <p><i class="fas fa-star"></i><span>@hotel.Rating</span></p>
+                                        </div>
+                                        <a class="simple-btn" href="@Url.Action("GetHotelDetail", "Hotel", new { hotelId = hotel.HotelId })"><i class="far fa-chevron-right"></i>Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning">No hotels found for your search.</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Room List End -->
+    <!-- Footer Area Start -->
+    <div class="footer__area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 sm-mb-30">
+                    <div class="footer__area-widget">
+                        <div class="footer__area-widget-about">
+                            <div class="footer__area-widget-about-logo">
+                                <a href="/"><img src="/hostily/assets/img/logo.png" alt=""></a>
+                            </div>
+                            <p>Phasellus nisi sapien, rutrum placerat sapien eu, rhoncus tempus</p>
+                            <div class="footer__area-widget-about-social">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 lg-mb-30">
+                    <div class="footer__area-widget">
+                        <h5>Information</h5>
+                        <div class="footer__area-widget-contact">
+                            <div class="footer__area-widget-contact-item">
+                                <div class="footer__area-widget-contact-item-icon">
+                                    <i class="fal fa-map-marked-alt"></i>
+                                </div>
+                                <div class="footer__area-widget-contact-item-content">
+                                    <span><a href="#">GXF4+8HQ Chippenham United Kingdom</a></span>
+                                </div>
+                            </div>
+                            <div class="footer__area-widget-contact-item">
+                                <div class="footer__area-widget-contact-item-icon">
+                                    <i class="fal fa-envelope-open-text"></i>
+                                </div>
+                                <div class="footer__area-widget-contact-item-content">
+                                    <span><a href="mailto:help.info@gamil.com">help.info@gamil.com</a></span>
+                                </div>
+                            </div>
+                            <div class="footer__area-widget-contact-item">
+                                <div class="footer__area-widget-contact-item-icon">
+                                    <i class="fal fa-phone-alt"></i>
+                                </div>
+                                <div class="footer__area-widget-contact-item-content">
+                                    <span><a href="tel:+123(458)585568">+123 (458) 585 568</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-5 col-sm-4 sm-mb-30">
+                    <div class="footer__area-widget">
+                        <h5>Pages Links</h5>
+                        <div class="footer__area-widget-menu">
+                            <ul>
+                                <li><a href="#"><i class="fal fa-angle-double-right"></i>Room Cleaning</a></li>
+                                <li><a href="#"><i class="fal fa-angle-double-right"></i>Car Parking</a></li>
+                                <li><a href="#"><i class="fal fa-angle-double-right"></i>Swimming pool</a></li>
+                                <li><a href="#"><i class="fal fa-angle-double-right"></i>Fitness Gym</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-7 col-sm-8">
+                    <div class="footer__area-widget">
+                        <h5>Subscribe</h5>
+                        <div class="footer__area-widget-subscribe">
+                            <form action="#">
+                                <input type="text" name="email" placeholder="Email Address" required="">
+                                <button type="submit"><i class="fal fa-hand-pointer"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright__area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-7 md-mb-10">
+                        <div class="copyright__area-left md-t-center">
+                            <p>Copyright © 2025 <a href="#">ThemeOri</a> Website by <a href="/">Hostily</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-5">
+                        <div class="copyright__area-right t-right md-t-center">
+                            <ul>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Area End -->
+    <script src="/hostily/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/hostily/assets/js/bootstrap.min.js"></script>
+    <script src="/hostily/assets/js/jquery.counterup.min.js"></script>
+    <script src="hostily/assets/js/popper.min.js"></script>
+    <script src="/hostily/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/hostily/assets/js/jquery.nice-select.min.js"></script>
+    <script src="/hostily/assets/js/swiper-bundle.min.js"></script>
+    <script src="/hostily/assets/js/jquery.waypoints.min.js"></script>
+    <script src="/hostily/assets/js/jquery.meanmenu.min.js"></script>
+    <script src="hostily/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/hostily/assets/js/custom.js"></script>
+</body>
+</html>
