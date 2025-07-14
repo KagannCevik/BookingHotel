@@ -1,4 +1,4 @@
-# 🏨 Booking.com API Entegrasyonu - ASP.NET Core 6.0
+# 🏨 Booking.com API Entegrasyonu - ASP.NET Core 8.0
 
 Bu proje, **M&Y Yazılım Eğitim Akademi Danışmanlık** bünyesinde ve **Murat Yücedağ** hocamın mentörlüğünde geliştirilmiştir. RapidAPI üzerinden Booking.com servislerini kullanarak **gerçek zamanlı bir otel arama uygulaması** oluşturulmuştur.
 
@@ -8,7 +8,7 @@ Bu uygulama, kullanıcının girdiği seyahat bilgilerine göre Booking.com API'
 
 ## 🛠️ Kullanılan Teknolojiler
 
-- ASP.NET Core 6.0
+- ASP.NET Core 8.0
 - C#
 - HttpClient (API çağrıları)
 - Newtonsoft.Json (JSON verisi ayrıştırma)
@@ -48,14 +48,15 @@ Bu uygulama, kullanıcının girdiği seyahat bilgilerine göre Booking.com API'
 - Responsive kullanıcı arayüzü (Razor View)
 
 ## 📂 Proje Yapısı
-<img width="1917" height="959" alt="Image" src="https://github.com/user-attachments/assets/b96f63be-150a-4168-927a-f3c093ee856c" />
-
 
 <img width="1915" height="947" alt="Image" src="https://github.com/user-attachments/assets/4b5ce3b7-16a0-47be-914e-599090b230ec" />
+<br> <br> 
 
+<img width="1917" height="959" alt="Image" src="https://github.com/user-attachments/assets/b96f63be-150a-4168-927a-f3c093ee856c" />
+<br> <br> 
 
 <img width="1916" height="943" alt="Image" src="https://github.com/user-attachments/assets/cd316271-7037-4787-8989-70a498dd62c0" />
-
+<br> <br> 
 
 <img width="1918" height="830" alt="Image" src="https://github.com/user-attachments/assets/1e5786c5-3c89-474f-bb83-18c7d92a5350" />
 
