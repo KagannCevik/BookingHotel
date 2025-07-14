@@ -52,13 +52,11 @@ Bu uygulama, kullanıcının girdiği seyahat bilgilerine göre Booking.com API'
 <img width="1915" height="947" alt="Image" src="https://github.com/user-attachments/assets/4b5ce3b7-16a0-47be-914e-599090b230ec" />
 <br> <br> 
 
-<img width="1917" height="959" alt="Image" src="https://github.com/user-attachments/assets/b96f63be-150a-4168-927a-f3c093ee856c" />
-<br> <br> 
-
 <img width="1916" height="943" alt="Image" src="https://github.com/user-attachments/assets/cd316271-7037-4787-8989-70a498dd62c0" />
 <br> <br> 
 
 <img width="1918" height="830" alt="Image" src="https://github.com/user-attachments/assets/1e5786c5-3c89-474f-bb83-18c7d92a5350" />
+<br> <br> 
 
-
+<img width="1917" height="959" alt="Image" src="https://github.com/user-attachments/assets/b96f63be-150a-4168-927a-f3c093ee856c" />
 
