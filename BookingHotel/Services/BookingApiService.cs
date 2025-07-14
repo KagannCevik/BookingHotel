@@ -14,7 +14,7 @@ namespace BookingHotel.Services
             _configuration = configuration;
 
             
-            _httpClient.DefaultRequestHeaders.Add("X-RapidAPI-Key", "2522808563msh5677c580366a3dap131bf8jsn099ac7e72c0f");
+            _httpClient.DefaultRequestHeaders.Add("X-RapidAPI-Key", "apikey");
             _httpClient.DefaultRequestHeaders.Add("X-RapidAPI-Host", "booking-com15.p.rapidapi.com");
         }
 
