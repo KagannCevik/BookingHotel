@@ -47,7 +47,7 @@ Bu uygulama, kullanıcının girdiği seyahat bilgilerine göre Booking.com API'
 - ViewModel kullanımıyla veri modelleme
 - Responsive kullanıcı arayüzü (Razor View)
 
-## 📂 Proje Yapısı
+## 📷 Proje Resimleri
 
 <img width="1915" height="947" alt="Image" src="https://github.com/user-attachments/assets/4b5ce3b7-16a0-47be-914e-599090b230ec" />
 <br> <br> 
